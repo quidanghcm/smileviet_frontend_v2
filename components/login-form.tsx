@@ -103,11 +103,9 @@ export function LoginForm({
                   required />
               </Field>
               <Field>
-                <Button type="submit" className="w-full" disabled={loading}>
-
+                <Button type="submit" className="w-full text-white" disabled={loading}>
                   {loading ? "Đang xử lý ..." : "Đăng nhập"}
                 </Button>
-
               </Field>
             </FieldGroup>
           </form>
