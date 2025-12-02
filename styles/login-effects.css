@@ -132,7 +132,7 @@ HIỆU ỨNG ALERT */
 .sv-alert {
   border-radius: 12px;
   padding: 14px 16px;
-  border: 1px solid #f5b5b5;
+  border: 1px solid #f5b5b530; /*#f5b5b5;*/
   background: #fdeded; /* đỏ nhạt */
   color: #c73838;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
