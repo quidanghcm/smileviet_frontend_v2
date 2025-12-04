@@ -7,7 +7,7 @@ import {
   ToolbarDescription,
   ToolbarHeading,
   ToolbarPageTitle,
-} from '@/partials/common/toolbar';
+} from '@/app/components/partials/common/toolbar';
 import { useSettings } from '@/providers/settings-provider';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/common/container';
