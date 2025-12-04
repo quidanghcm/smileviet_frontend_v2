@@ -10,7 +10,7 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        
+
 
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_SMILEVIET_URL}/api/auth/local`,
@@ -29,7 +29,7 @@ const handler = NextAuth({
         const data = await res.json();
 
         if (!res.ok || !data.jwt) {
-        throw new Error(data.error?.message || "Login failed");
+          throw new Error(data.error?.message || "Login failed");
         }
 
         // Trả về user object cho NextAuth
@@ -37,8 +37,8 @@ const handler = NextAuth({
           id: data.user.id,
           name: data.user.username,
           email: data.user.email,
-          firstName: data.firstName,
-          lastName: data.lastName,
+          firstName: data.user.firstName,
+          lastName: data.user.lastName,
           jwt: data.jwt,
         };
       },
@@ -50,11 +50,15 @@ const handler = NextAuth({
       if (user) {
         token.jwt = user.jwt;
         token.id = user.id;
+        token.firstName = user.firstName;
+        token.lastName = user.lastName;
       }
       return token;
     },
     async session({ session, token }) {
       session.user.id = token.id;
+      session.user.firstName = token.firstName;
+      session.user.lastName = token.lastName;
       session.jwt = token.jwt;
       return session;
     },

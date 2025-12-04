@@ -1,0 +1,197 @@
+@import 'tw-animate-css';
+
+/** Colors - https://tailwindcss.com/docs/colors **/
+/* :root {
+  --background: var(--color-white);
+  --foreground: var(--color-zinc-950);
+  --card: var(--color-white);
+  --card-foreground: var(--color-zinc-950);
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-zinc-950);
+  --primary: var(--color-blue-500);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-zinc-100);
+  --secondary-foreground: var(--color-zinc-900);
+  --muted: var(--color-zinc-100);
+  --muted-foreground: var(--color-zinc-500);
+  --accent: var(--color-zinc-100);
+  --accent-foreground: var(--color-zinc-900);
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
+  --chart-1: var(--color-blue-500);
+  --chart-2: var(--color-green-500);
+  --chart-3: var(--color-yellow-500);
+  --chart-4: var(--color-red-500);
+  --chart-5: var(--color-purple-500);
+  --border: oklch(94% 0.004 286.32);
+  --input: var(--color-zinc-200);
+  --ring: var(--color-zinc-400);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: var(--color-zinc-950);
+  --foreground: var(--color-zinc-50);
+  --card: var(--color-zinc-950);
+  --card-foreground: var(--color-zinc-50);
+  --popover: var(--color-zinc-950);
+  --popover-foreground: var(--color-zinc-50);
+  --primary: var(--color-blue-600);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-zinc-800);
+  --secondary-foreground: var(--color-zinc-50);
+  --muted: var(--color-zinc-900);
+  --muted-foreground: var(--color-zinc-500);
+  --accent: var(--color-zinc-900);
+  --accent-foreground: var(--color-zinc-50);
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
+  --chart-1: var(--color-blue-500);
+  --chart-2: var(--color-green-500);
+  --chart-3: var(--color-yellow-500);
+  --chart-4: var(--color-red-500);
+  --chart-5: var(--color-purple-500);
+  --border: var(--color-zinc-800);
+  --input: var(--color-zinc-800);
+  --ring: var(--color-zinc-600);
+} */
+
+:root {
+  --radius: 0.65rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.20 0.02 55);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.02 55);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.02 55);
+
+  /* PRIMARY – Golden Brown #C99A6B */
+  --primary: oklch(0.75 0.08 55);
+  --primary-foreground: oklch(0.25 0.02 55);
+
+  /* SECONDARY – lighter primary */
+  --secondary: oklch(0.90 0.03 55);
+  --secondary-foreground: oklch(0.30 0.02 55);
+
+  /* MUTED */
+  --muted: oklch(0.93 0.02 55);
+  --muted-foreground: oklch(0.45 0.02 55);
+
+  /* ACCENT – soft golden */
+  --accent: oklch(0.82 0.05 55);
+  --accent-foreground: oklch(0.25 0.02 55);
+
+  /* DESTRUCTIVE */
+  --destructive: oklch(0.60 0.20 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* UI */
+  --border: oklch(0.92 0.02 55);
+  --input: oklch(0.92 0.02 55);
+  --ring: oklch(0.75 0.08 55);
+
+  /* CHART COLORS */
+  --chart-1: oklch(0.80 0.09 55);
+  --chart-2: oklch(0.72 0.08 55);
+  --chart-3: oklch(0.64 0.07 55);
+  --chart-4: oklch(0.55 0.06 55);
+  --chart-5: oklch(0.48 0.05 55);
+}
+
+.dark {
+  --background: oklch(0.14 0.005 285);
+  --foreground: oklch(0.98 0 0);
+
+  --card: oklch(0.20 0.006 285);
+  --card-foreground: oklch(0.98 0 0);
+
+  --popover: oklch(0.20 0.006 285);
+  --popover-foreground: oklch(0.98 0 0);
+
+  /* PRIMARY – brighter for dark */
+  --primary: oklch(0.80 0.07 55);
+  --primary-foreground: oklch(0.18 0.02 55);
+
+  /* SECONDARY */
+  --secondary: oklch(0.35 0.03 55);
+  --secondary-foreground: oklch(0.92 0.01 55);
+
+  /* MUTED */
+  --muted: oklch(0.30 0.02 55);
+  --muted-foreground: oklch(0.85 0.02 55);
+
+  /* ACCENT */
+  --accent: oklch(0.72 0.06 55);
+  --accent-foreground: oklch(0.18 0.02 55);
+
+  /* DESTRUCTIVE */
+  --destructive: oklch(0.70 0.15 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* UI */
+  --border: oklch(0.30 0.02 55 / 50%);
+  --input: oklch(0.30 0.02 55 / 60%);
+  --ring: oklch(0.80 0.07 55);
+
+  /* CHARTS */
+  --chart-1: oklch(0.85 0.09 55);
+  --chart-2: oklch(0.75 0.08 55);
+  --chart-3: oklch(0.65 0.07 55);
+  --chart-4: oklch(0.55 0.06 55);
+  --chart-5: oklch(0.48 0.05 55);
+}
+
+
+/** Theme Setup **/
+@theme inline {
+  /** Base Colors **/
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-mono: var(--mono);
+  --color-mono-foreground: var(--mono-foreground);
+
+  /** Base Styles **/
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/** Custom Font Size **/
+@theme {
+  --text-2sm: 0.8125rem;
+  --text-2sm--line-height: calc(1.075 / 0.8125);
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: calc(0.825 / 0.6875);
+}
+

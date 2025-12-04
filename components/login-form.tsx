@@ -17,7 +17,7 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 
-import "@/styles/login-effects.css";
+import "@/css/login-effects.css";
 
 export function LoginForm() {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -55,22 +55,23 @@ export function LoginForm() {
 
   return (
     <div className="relative z-10 w-full max-w-sm">
-      <Card className="relative overflow-hidden">
+      <Card className="relative overflow-hidden ">
 
         {/* Glow nền card */}
         <div className="sv-card-glow"></div>
 
-        <CardHeader className="text-center relative z-10">
+        <CardHeader className="border-b-0 relative z-10 flex flex-col items-center justify-center text-center">
           {/* Logo hiệu ứng */}
           <div className="sv-logo-center-small mb-4">
-            <img src="/smileviet.svg" className="sv-logo" />
+            <img src="/media/app/smileviet.svg" className="sv-logo" />
             <div className="sv-shine"></div>
           </div>
 
-          <CardTitle className="text-xl">
+          <CardTitle className="text-xl text-center ">
             Phần mềm quản lý tour
           </CardTitle>
         </CardHeader>
+
 
         {/* Hiện lỗi dưới title (mềm mại và đẹp) */}
         {/* {error && (
@@ -84,7 +85,7 @@ export function LoginForm() {
         )} */}
 
         {error && (
-          <div className="px-6 pb-0 relative z-20">
+          <div className="px-6 pb-0 relative z-20 mt-5">
             <div className="sv-alert">
               <div className="sv-alert-icon">
                 <AlertCircle className="h-4 w-4 text-[#8a5f2d]" />
@@ -100,7 +101,7 @@ export function LoginForm() {
 
 
 
-        <CardContent className="relative z-10 mt-2">
+        <CardContent className="relative z-10">
           <form onSubmit={handleLogin} className="grid gap-4">
             <FieldGroup>
               <Field>

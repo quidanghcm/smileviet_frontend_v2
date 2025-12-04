@@ -41,11 +41,13 @@ const data = {
     name: "admin",
     email: "admin@smileviet.com",
     avatar: "/avatars/shadcn.jpg",
+    firstName: "",
+    lastName: ""
   },
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard",
+      url: "/",
       icon: IconDashboard,
     },
     {
@@ -142,6 +144,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { data: session } = useSession();
+  
   // console.log(session);
 
 
@@ -173,7 +176,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             user={{
               name: session.user.name ?? "",
               email: session.user.email ?? "",
-              avatar: session.user.image ?? "/avatars/default-avatar.png"
+              avatar: session.user.image ?? "/avatars/default-avatar.png",
+              firstName: session.user.firstName ?? "",
+              lastName: session.user.lastName ?? "",
             }}
           />
         )}

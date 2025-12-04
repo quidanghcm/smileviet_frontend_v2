@@ -6,7 +6,7 @@ import {
     SidebarInset,
     SidebarProvider,
 } from "@/components/ui/sidebar"
-import { IconLoader2 } from "@tabler/icons-react";
+import { IconLoader } from "@tabler/icons-react";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation"
 
@@ -20,7 +20,7 @@ export default function Page({
     const { status } = useSession();
     if (status === "loading") {
         return (
-            <IconLoader2 className="size-10 animate-spin mx-auto h-screen text-gray-500" />
+            <IconLoader className="size-10 animate-spin mx-auto h-screen text-gray-500" />
         );
     }
 

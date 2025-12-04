@@ -1,0 +1,210 @@
+/*1.  HIỆU ỨNG LOGIN */
+/* ========== Glow nền Card ========== */
+
+.sv-card-glow {
+  position: absolute;
+  inset: -40px;
+  background: linear-gradient(-45deg, #f4d9a2, #0000 40% 60%, #d2a56a);
+  filter: blur(60px);
+  opacity: 0.45;
+  animation: svCardGlow 12s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes svCardGlow {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ========== Logo trong Card ========== */
+/* Wrapper chứa logo + shine */
+.sv-logo-center-small {
+  width: 160px;
+  margin: 20px auto 5px;
+
+  /* BẮT BUỘC */
+  position: relative;
+  overflow: hidden;  
+  display: block;
+}
+
+
+.sv-logo {
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.92);
+  animation: fadeScale 0.7s ease-out forwards,
+             breathe 3.5s ease-in-out infinite 0.7s;
+}
+
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes breathe {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* ========== Shine quét qua logo ========== */
+.sv-shine {
+  position: absolute;
+  top: 0;
+  left: -60%;        /* bắt đầu trong vùng logo */
+  width: 60%;        /* chỉ bằng logo */
+  height: 100%;
+  z-index: 2;
+
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255, 238, 198, 0.8) 50%,
+    rgba(255,255,255,0) 100%
+  );
+
+  filter: blur(4px);
+  transform: skewX(-20deg);
+
+  animation: svShineMove 1.8s ease-in-out infinite;
+}
+
+@keyframes svShineMove {
+  0%   { left: -60%; }
+  60%  { left: 110%; }   /* kết thúc vừa đủ logo */
+  100% { left: 110%; }
+}
+
+
+
+/* ========== Nền vòng tròn của trang login ========== */
+.sv-wrapper {
+  /* background: radial-gradient(circle at center, #0d0d0d, #090909 60%, #040404); */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* vòng tròn xoay */
+.sv-flow-lines {
+  position: absolute;
+  width: 1400px;
+  height: 1400px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: showLines 1s ease-out forwards 0.4s;
+  pointer-events: none;
+}
+
+.sv-flow-lines div {
+  position: absolute;
+  border: 1px solid rgba(221, 140, 19, 0.62);
+  /* border: 1px solid rgba(177, 108, 4, 0.62); */
+  border-radius: 50%;
+  animation: rotateFlow linear infinite;
+}
+
+.sv-flow-lines div:nth-child(1) { width: 98%; height: 98%; animation-duration: 22s; }
+.sv-flow-lines div:nth-child(2) { width: 86%; height: 86%; animation-duration: 17s; }
+.sv-flow-lines div:nth-child(3) { width: 70%; height: 70%; animation-duration: 26s; }
+
+@keyframes showLines {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 0.25; transform: scale(1); }
+}
+
+@keyframes rotateFlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* 
+HIỆU ỨNG ALERT */
+/* ============================
+   PREMIUM ALERT FOR LOGIN
+============================ */
+.sv-alert {
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid #f5b5b530; /*#f5b5b5;*/
+  background: #fdeded; /* đỏ nhạt */
+  color: #c73838;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  animation: svAlertIn 0.35s ease-out;
+  display: flex;
+  gap: 12px;
+}
+
+.sv-alert-icon {
+  padding: 6px;
+  border-radius: 8px;
+  background: #f8cccc;
+}
+
+.sv-alert-title {
+  font-weight: 600;
+  color: #b12525;
+}
+
+.sv-alert-desc {
+  font-size: 0.85rem;
+  color: #9a1f1f;
+}
+
+
+/* .sv-alert {
+  border-radius: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 180, 90, 0.35); 
+  background: rgba(255, 240, 220, 0.45); 
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  animation: svAlertIn 0.35s ease-out;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+
+.sv-alert-icon {
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(255, 200, 130, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sv-alert-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin: 0 0 2px 0;
+  color: #6a4e2a; 
+}
+
+
+.sv-alert-desc {
+  font-size: 0.85rem;
+  line-height: 1.35;
+  margin: 0;
+  color: #5a4630;
+} */
+
+/* Animation */
+@keyframes svAlertIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
